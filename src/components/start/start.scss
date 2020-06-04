@@ -1,0 +1,38 @@
+@import '../../vars';
+
+.start {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 60px;
+    &__input {
+        background: $light-bg;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        padding: 16px 8px;
+        color: $primary;
+        border-radius: 8px;
+        width: 350px;
+        border: 1px solid transparent;
+        transition: all 200ms ease-in-out;
+        &:focus {
+            background: transparent;
+            border-color: $primary;
+        }
+    }
+    &__output {
+        background: $light-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        padding: 0 8px;
+        width: 350px;
+        font-size: 16px;
+        color: $primary;
+    }
+}
+.start-confirm {
+    align-self: flex-end;
+}

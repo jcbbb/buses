@@ -1,0 +1,97 @@
+@import '../../vars';
+
+.content-wborder {
+    display: flex;
+    max-width: 1100px;
+    flex-direction: column;
+    min-height: 600px;
+    width: 100%;
+    margin-top: 48px;
+}
+
+/*
+*   TODO: Show arrows on hover
+*/
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    &__left, &__right {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    &__left-image-container {
+        width: 250px;
+        &:hover ~ .top__arrow-bottom, &:hover ~ .top__arrow-top, &:hover ~ .top__arrow-left, &:hover ~ .top__arrow-right {
+            opacity: 1;
+        }
+        img {
+            max-width: 100%;
+            cursor: pointer;
+        }
+    }
+    &__right-image-container {
+        width: 600px;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__arrow-top, &__arrow-bottom, &__arrow-left, &__arrow-right{
+        width: 150px;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+    }
+    &__arrow-left {
+        left: -50px;
+        top: 50%;
+        transform: translateY(-50%) rotate(270deg);
+    }
+    &__arrow-right {
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-270deg);
+    }
+    &__arrow-bottom {
+        transform: rotate(180deg);
+        bottom: -5px;
+    }
+    &__arrow-top {
+        top: -5px;
+    }
+}
+.icon-container {
+    width: 28px;
+    cursor: pointer;
+    img {
+        max-width: 100%;
+    }
+}
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    &__left-image-container {
+        width: 240px;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__right-image-container {
+        width: 600px;
+        img {
+            max-width: 100%;
+        }
+    }
+}
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 125px;
+    margin-top: 50px;
+}

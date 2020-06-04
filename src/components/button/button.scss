@@ -1,0 +1,28 @@
+@import '../../vars';
+
+.btn {
+    outline: none;
+    border: none;
+    background: $primary-light;
+    border: 1px solid $primary;
+    color: $primary;
+    background: transparent;
+    width: 120px;
+    padding: 12px 0;
+    width: 140px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 200ms ease-in-out;
+    &:hover, &:focus {
+        background: $light-bg;
+    }
+    &-filled {
+        background: $primary;
+        color: #fff;
+        &:hover, &:focus {
+            background: $primary-light;
+        } 
+    }
+}

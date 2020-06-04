@@ -1,0 +1,20 @@
+@import '../../vars';
+
+.question {
+    display: flex;
+    margin-bottom: 60px;
+    align-items: center;
+    justify-content: space-between;
+    &__block {
+        background: $light-bg;
+        padding: 20px;
+        color: $primary;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+}
+.bottom-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}

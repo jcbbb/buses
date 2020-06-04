@@ -1,0 +1,97 @@
+@import '../../vars';
+
+.nav {
+    background: $primary;
+    max-width: 300px;
+    width: 300px;
+    color: #fff;
+    padding: 15px;
+    min-height: 500px;
+    height: calc(100% - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    transition: all 200ms ease-in;
+    top: 70px;
+    left: -300px;
+    z-index: 2;
+    &--active {
+        left: 0;
+    }
+    &__link {
+        padding: 20px 15px;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        font-weight: $bold;
+        cursor: pointer;
+        color: #fff;
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+        outline: none;
+        &:hover, &:focus {
+            background: $primary-light; 
+        }
+        &--active {
+            background: $primary-light;
+        }
+    }
+    &__link-icon {
+        margin-right: 25px;
+        height: 24px;
+    }
+    &__profile {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+        &--hover {
+            &:hover, &:focus {
+                background: $primary-light;
+            }
+        }
+    }
+    &__profile-info {
+        flex-grow: 1;
+        align-self: center;
+        margin-left: 10px;
+    }
+    &__profile-icon {
+        transition: transform 200ms ease-in-out;
+        &--rotate {
+            transition: transform 200ms ease-in-out;
+            transform: rotate(180deg);
+        }
+    } 
+    &__profile-name {
+        font-weight: $bold;
+    }
+    &__profile-role {
+        font-size: 13px;
+    }
+    &__profile-popup {
+        display: flex;
+        flex-direction: column;
+        background: $primary-light;
+        border-radius: 8px;
+        position: absolute;
+        width: 100%;
+        left: 40px;
+        bottom: 120px;
+    }
+    &__profile-popup-btn {
+        border: none;
+        outline: none;
+        background: $primary;
+        color: #fff;
+        font-size: 16px;
+        padding: 20px;
+        box-shadow: 0 15px 30px lighten($color: $primary-light, $amount: 5%);
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}

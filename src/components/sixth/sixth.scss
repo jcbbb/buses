@@ -1,0 +1,64 @@
+@import '../../vars';
+
+
+.system-output {
+    height: 250px;
+    width: 100%;
+    background: $light-bg;
+    color: $primary;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__text {
+        font-size: 18px;
+    }
+}
+.inputs {
+    display: flex;
+    margin: 60px 0;
+    justify-content: space-between;
+    width: 100%;
+    &__group {
+        position: relative;
+    }
+    &__label {
+        position: absolute;
+        top: 22px;
+        left: 13px;
+        font-size: 16px;
+        font-weight: 400;
+        color: $primary;
+        transition: all 200ms ease-in-out;
+        pointer-events: none;
+    }
+    &__input {
+        padding: 20px 8px;
+        outline: none;
+        border: none;
+        background: $light-bg;
+        border-left: 5px solid $primary;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+        border-radius: 8px;
+        width: 350px;
+        font-size: 18px;
+        color: $primary;
+        &:focus {
+            background: transparent;
+            border-right-color: $primary;
+            border-bottom-color: $primary;
+            border-top-color: $primary;
+        }
+        &:focus + .inputs__label, &:valid + .inputs__label {
+            top: -25px; 
+            left: 0;
+            font-size: 85%;
+            background: $primary;
+            color: #fff;
+            padding: 3px;
+            border-radius: 3px;
+        }
+    }
+}

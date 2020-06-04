@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MenuContext from './context/MenuContext';
+import useRoutes from './hooks/useRoutes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const App = () => {
+    const routes = useRoutes(true);
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <MenuContext.Provider
+            value={{
+                isOpen,
+                setIsOpen,
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+            <div className="App">{routes}</div>
+        </MenuContext.Provider>
+    );
+};
 
 export default App;

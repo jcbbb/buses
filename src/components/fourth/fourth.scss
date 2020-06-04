@@ -1,0 +1,124 @@
+@import '../../vars';
+
+.icon-container {
+    width: 28px;
+    cursor: pointer;
+    img {
+        max-width: 100%;
+    }
+}
+.content-4 {
+    display: flex;
+    justify-content: space-between;
+    min-height: 600px;
+    width: 900px;
+    margin: auto;
+    padding: 70px 0;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    &__bus {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    &__bus-image-container {
+        min-width: 330px;
+        max-width: 500px;
+        img {
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+    &__right-image-container {
+        width: 600px;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__arrow-top, &__arrow-bottom, &__arrow-left, &__arrow-right{
+        width: 200px;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__arrow-left {
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%) rotate(270deg);
+    }
+    &__arrow-right {
+        right: -70px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-270deg);
+    }
+    &__arrow-bottom {
+        transform: rotate(180deg);
+        bottom: -5px;
+    }
+    &__arrow-top {
+        top: -5px;
+    }
+}
+.right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 400px;
+    &__top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: $shadow;
+        padding: 16px 0;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        transition: border-color 200ms ease-in-out;
+        color: $primary;
+        &:hover {
+            border-color: $primary;
+        }
+    }
+    &__image-container {
+        margin: 40px 0;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__comment-section {
+        border: 1px solid #B9B9B9;
+        padding: 12px;
+        outline: none;
+        font-size: 16px;
+        color: #414141;
+        resize: none;
+        border-radius: 8px;
+        transition: border-color 200ms ease-in-out;
+        &:hover, &:focus {
+            border-color: $primary;
+        }
+    }
+}
+
+.side-arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    transform: rotate(180deg);
+    &__batch:nth-child(2) {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__batch {
+        display: flex;
+        justify-content: space-between;
+        width: 80px;
+    }
+}

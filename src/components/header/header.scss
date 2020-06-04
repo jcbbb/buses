@@ -1,0 +1,73 @@
+@import '../../vars';
+
+.header {
+    background: $primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+    &__left-icon {
+        color: #fff;
+        margin-right: 20px;
+        height: 44px;
+        width: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover, &:focus {
+            background: $primary-light;
+        }
+    }
+    &__heading {
+        font-size: 20px;
+        color: #fff;
+        font-weight: $bold;
+    }
+    &__form-group {
+        display: flex;
+        align-items:center; 
+    }
+    &__form-input {
+        border: none;
+        outline: none;
+        background: transparent;
+        border: 1px solid $primary-light;
+        padding: 10px 90px 10px 10px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: $normal;
+        border-radius: 8px;
+        width: 400px;
+    }
+    &__form-button {
+        background: $primary-light;
+        border: none;
+        outline: none;
+        padding: 8px 30px;
+        border-radius: 0 8px 8px 0; 
+        margin-left: -80px;
+        cursor: pointer;
+    }
+    &__form-icon {
+        color: #fff;
+        font-size: 20px;
+        outline: none;
+        svg {
+            width: 1em;
+            height: 1em;
+        }
+    }
+}
+
+
