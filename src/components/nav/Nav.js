@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import MenuContext from '../../context/MenuContext';
+import UserContext from '../../context/UserContext';
 import { ReactComponent as RefreshIcon } from '../../assets/icons/refresh-cw.svg';
 import { ReactComponent as RegistrationIcon } from '../../assets/icons/user-plus.svg';
 import { ReactComponent as FileIcon } from '../../assets/icons/file-text.svg';
@@ -13,6 +14,7 @@ import './nav.scss';
 
 const Nav = () => {
     const { isOpen } = useContext(MenuContext);
+    const user = useContext(UserContext);
     const [popupOpen, setPopupOpen] = useState(false);
     return (
         <nav className={isOpen ? 'nav nav--active' : 'nav'}>
@@ -62,7 +64,10 @@ const Nav = () => {
                     </NavLink>
                 </li>
             </ul>
-            <div className="nav__profile nav__profile--hover" onClick={() => setPopupOpen((open) => !open)}>
+            <div
+                className="nav__profile nav__profile--hover"
+                onClick={() => setPopupOpen((open) => !open)}
+            >
                 <div className="nav__profile-img">
                     <img src={ProfileImage} alt="profile" />
                 </div>
@@ -74,7 +79,7 @@ const Nav = () => {
                     <ChevronIcon />
                 </span>
             </div>
-            {(popupOpen && isOpen) && (
+            {popupOpen && isOpen && (
                 <div className="nav__profile-popup">
                     <div className="nav__profile">
                         <div className="nav__profile-img">
@@ -88,9 +93,12 @@ const Nav = () => {
                             <CheckmarkIcon />
                         </span>
                     </div>
-                    <button className="nav__profile-popup-btn">
+                    <button
+                        className="nav__profile-popup-btn"
+                        onClick={() => user.setIsAuthenticated(false)}
+                    >
                         Log out ot John Doe
-                </button>
+                    </button>
                 </div>
             )}
         </nav>

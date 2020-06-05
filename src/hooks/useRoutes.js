@@ -4,7 +4,8 @@ import Header from '../components/header/Header';
 import Registration from '../components/registration/Registration';
 import Results from '../components/results/Results';
 import Checkup from '../components/checkup/Checkup';
-import { Switch, Route } from 'react-router-dom';
+import Login from '../components/login/Login';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 const routes = [
     {
@@ -40,8 +41,8 @@ const routes = [
         exact: true,
         header: () => <Header />,
         nav: () => <Nav />,
-        main: () => <Checkup />
-    }
+        main: () => <Checkup />,
+    },
 ];
 const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {
@@ -73,6 +74,16 @@ const useRoutes = (isAuthenticated) => {
             </>
         );
     }
+    return (
+        <div className="wrapper">
+            <Switch>
+                <Route exact path="/">
+                    <Login />
+                </Route>
+                <Redirect to="/" />
+            </Switch>
+        </div>
+    );
 };
 
 export default useRoutes;
